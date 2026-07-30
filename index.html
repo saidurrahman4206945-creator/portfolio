@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saidur Rahman | Personal Portfolio</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <header class="top-header">
+        <div class="brand">
+            <span class="avatar-sm">SR</span>
+            <span class="brand-name">Saidur Rahman</span>
+        </div>
+        <nav class="top-nav">
+            <a href="#home" class="nav-link active" data-tab="home">Home</a>
+            <a href="#projects" class="nav-link" data-tab="projects">Projects</a>
+            <a href="#skills" class="nav-link" data-tab="skills">Skills</a>
+            <a href="#hobbies" class="nav-link" data-tab="hobbies">Hobbies</a>
+            <a href="#more" class="nav-link" data-tab="more">More</a>
+        </nav>
+        <div class="user-badge">
+            <span class="avatar-sm">SR</span>
+            <span class="brand-name">Saidur Rahman</span>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <ul class="side-menu">
+                <li class="active" data-tab="home">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+                </li>
+                <li data-tab="cv">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>CV</span>
+                </li>
+                <li data-tab="projects">
+                    <i class="fa-solid fa-code"></i>
+                    <span>Projects</span>
+                </li>
+                <li data-tab="skills">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Skills</span>
+                </li>
+                <li data-tab="hobbies">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Hobbies</span>
+                </li>
+                <li data-tab="more">
+                    <i class="fa-solid fa-ellipsis"></i>
+                    <span>More</span>
+                </li>
+            </ul>
+
+            <div class="sidebar-contact">
+                <h4>Contact</h4>
+                <a href="https://wa.me/8801610231457" target="_blank" class="contact-item">
+                    <i class="fa-brands fa-whatsapp whatsapp-icon"></i>
+                    <div>
+                        <small>WhatsApp</small>
+                        <p>01610231457</p>
+                    </div>
+                </a>
+                <a href="https://facebook.com/sidur" target="_blank" class="contact-item">
+                    <i class="fa-brands fa-facebook facebook-icon"></i>
+                    <div>
+                        <small>Facebook</small>
+                        <p>Saidur Rahman</p>
+                    </div>
+                </a>
+                <a href="https://instagram.com/sidur" target="_blank" class="contact-item">
+                    <i class="fa-brands fa-instagram instagram-icon"></i>
+                    <div>
+                        <small>Instagram</small>
+                        <p>Saidur Rahman</p>
+                    </div>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Dynamic Main Content Views -->
+        <main class="main-content">
+
+            <!-- PAGE 1: HOME TAB -->
+            <section id="tab-home" class="tab-page active">
+                <!-- Hero Section -->
+                <div class="card hero-card">
+                    <div class="hero-text">
+                        <span class="greeting">Assalamu Alaikum!</span>
+                        <h1>Saidur <span>Rahman</span></h1>
+                        <p>Computer Science and Engineering student with a passion for coding, problem solving and building impactful digital solutions.</p>
+                        <a href="#" class="btn btn-primary"><i class="fa-solid fa-download"></i> View CV</a>
+                    </div>
+                    <div class="hero-img-container">
+                        <!-- Profile Image placeholder -->
+                        <img src="sid.jpeg" alt="Saidur Rahman" class="hero-img" id="profile-pic">
+                    </div>
+                </div>
+
+                <!-- Grid Section for Home -->
+                <div class="grid-2col">
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fa-solid fa-user card-icon blue"></i>
+                            <h3>About Me</h3>
+                        </div>
+                        <p class="mb-1">I am a dedicated CSE student at International Islamic University of Chattogram.</p>
+                        <p class="mb-2">I love exploring new technologies and turning ideas into real-world applications through code.</p>
+                        
+                        <div class="institution-box">
+                            <i class="fa-solid fa-building-columns"></i>
+                            <div>
+                                <a href="https://sidur.ling" target="_blank" class="institution-link">International Islamic University of Chattogram</a>
+                                <p>Department : <span class="blue-text">Computer Science and Engineering</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header space-between">
+                            <div class="card-title-group">
+                                <i class="fa-solid fa-folder-open card-icon blue"></i>
+                                <h3>Projects</h3>
+                            </div>
+                            <button class="btn-text" onclick="switchTab('projects')">View All &rarr;</button>
+                        </div>
+                        <div class="project-mini-cards">
+                            <div class="mini-card">
+                                <i class="fa-solid fa-cart-shopping mini-icon blue-bg"></i>
+                                <h4>E-Commerce Website</h4>
+                                <p>A responsive e-commerce web application using HTML, CSS, JavaScript.</p>
+                                <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+                            </div>
+                            <div class="mini-card">
+                                <i class="fa-solid fa-clipboard-list mini-icon green-bg"></i>
+                                <h4>To-Do List App</h4>
+                                <p>A simple task management app built with JavaScript and localStorage.</p>
+                                <div class="tags"><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span></div>
+                            </div>
+                            <div class="mini-card">
+                                <i class="fa-solid fa-calculator mini-icon purple-bg"></i>
+                                <h4>CGPA Calculator</h4>
+                                <p>A CGPA calculator for students built using Java Swing.</p>
+                                <div class="tags"><span class="tag">Java</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-3col mt-1">
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fa-solid fa-code card-icon blue"></i>
+                            <h3>Skills</h3>
+                        </div>
+                        <div class="skills-grid">
+                            <span class="skill-pill"><i class="fa-brands fa-java red"></i> Java</span>
+                            <span class="skill-pill"><i class="fa-solid fa-c blue"></i> C++</span>
+                            <span class="skill-pill"><i class="fa-brands fa-html5 orange"></i> HTML</span>
+                            <span class="skill-pill"><i class="fa-brands fa-js yellow"></i> JS</span>
+                            <span class="skill-pill"><i class="fa-brands fa-css3-alt blue"></i> CSS</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fa-solid fa-heart card-icon red"></i>
+                            <h3>Hobbies</h3>
+                        </div>
+                        <div class="hobbies-icons">
+                            <div class="hobby-item"><i class="fa-solid fa-laptop-code"></i><span>Coding</span></div>
+                            <div class="hobby-item"><i class="fa-solid fa-book-open"></i><span>Reading</span></div>
+                            <div class="hobby-item"><i class="fa-solid fa-football"></i><span>Football</span></div>
+                            <div class="hobby-item"><i class="fa-solid fa-plane"></i><span>Traveling</span></div>
+                            <div class="hobby-item"><i class="fa-solid fa-music"></i><span>Listening Music</span></div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fa-solid fa-user card-icon blue"></i>
+                            <h3>More About Me</h3>
+                        </div>
+                        <p class="small-text">I am always eager to learn new things, take challenges, and collaborate on exciting projects. My goal is to become a skilled software engineer and contribute to innovative solutions.</p>
+                        <button class="btn btn-primary btn-full mt-1" onclick="switchTab('more')">Know More About Me</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE 2: EDUCATION TAB (MORE) -->
+            <section id="tab-more" class="tab-page">
+                <div class="page-header">
+                    <h2>Education</h2>
+                    <p>My academic journey and milestones.</p>
+                </div>
+
+                <div class="grid-2col">
+                    <!-- HSC Card -->
+                    <div class="card edu-card">
+                        <div class="edu-header">
+                            <i class="fa-solid fa-graduation-cap edu-icon"></i>
+                            <h3>HSC - Higher Secondary School Certificate</h3>
+                        </div>
+                        <div class="edu-body">
+                            <div class="edu-badge-icon">
+                                <i class="fa-solid fa-book-bookmark"></i>
+                            </div>
+                            <div class="edu-details">
+                                <p><strong>College:</strong> Chattogram College</p>
+                                <p><strong>GPA:</strong> <span class="blue-text highlight-gpa">GPA 5.00</span></p>
+                                <p><strong>Year:</strong> 2023</p>
+                                <p><strong>Group:</strong> Science</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SSC Card -->
+                    <div class="card edu-card">
+                        <div class="edu-header">
+                            <i class="fa-solid fa-book-open-reader edu-icon"></i>
+                            <h3>SSC - Secondary School Certificate</h3>
+                        </div>
+                        <div class="edu-body">
+                            <div class="edu-badge-icon">
+                                <i class="fa-solid fa-school"></i>
+                            </div>
+                            <div class="edu-details">
+                                <p><strong>School:</strong> Chattogram Government High School</p>
+                                <p><strong>GPA:</strong> <span class="blue-text highlight-gpa">GPA 5.00</span></p>
+                                <p><strong>Year:</strong> 2021</p>
+                                <p><strong>Group:</strong> Science</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Academic Achievements -->
+                <div class="card mt-1 achievements-card">
+                    <h3>Key Academic Achievements</h3>
+                    <ul>
+                        <li><strong>Position:</strong> Top 10 merit list in Upazila for HSC.</li>
+                        <li><strong>Scholarship:</strong> Talentpool Scholarship in SSC.</li>
+                        <li><strong>Awards:</strong> Multiple awards in District-level Science Fairs.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- PAGE 3: CONTACT TAB -->
+            <section id="tab-contact" class="tab-page">
+                <div class="page-header center">
+                    <h2>GET IN TOUCH</h2>
+                    <p>Feel free to reach out with any questions or project inquiries.</p>
+                </div>
+
+                <div class="grid-2col contact-layout">
+                    <!-- Contact Details -->
+                    <div class="card contact-info-card">
+                        <h3>Contact & Location</h3>
+                        <hr class="divider">
+                        
+                        <div class="contact-detail-item">
+                            <i class="fa-solid fa-envelope contact-icon"></i>
+                            <div>
+                                <strong>Email:</strong>
+                                <p><a href="mailto:c251084@ugrad.iiuc.ac.bd">c251084@ugrad.iiuc.ac.bd</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-item">
+                            <i class="fa-solid fa-phone contact-icon"></i>
+                            <div>
+                                <strong>Phone:</strong>
+                                <p>+880 1610-231457</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-item">
+                            <i class="fa-solid fa-location-dot contact-icon"></i>
+                            <div>
+                                <strong>Address:</strong>
+                                <p>Chattogram</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="card contact-form-card">
+                        <h3>Send a Message</h3>
+                        <form id="portfolio-form" onsubmit="handleFormSubmit(event)">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" placeholder="Your Name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" placeholder="Your Email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" placeholder="Subject" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-full">
+                                SEND MESSAGE <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <footer class="footer-copyright">
+                    <p>&copy; 2024 Saidur Rahman. All Rights Reserved.</p>
+                </footer>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
