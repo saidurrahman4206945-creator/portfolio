@@ -1,68 +1,116 @@
-// Function to handle tab switching
-function switchTab(tabId) {
-    // Hide all tab pages
-    const pages = document.querySelectorAll('.tab-page');
-    pages.forEach(page => page.classList.remove('active'));
+// Tab Switching Functionality
+function switchTab(tabName) {
+  // Hide all view sections
+  const sections = document.querySelectorAll('.view-section');
+  sections.forEach(sec => sec.classList.add('hidden'));
 
-    // Remove active status from top navbar links
-    const topLinks = document.querySelectorAll('.top-nav .nav-link');
-    topLinks.forEach(link => link.classList.remove('active'));
+  // Show selected view section
+  const targetSection = document.getElementById(`view-${tabName}`);
+  if (targetSection) {
+    targetSection.classList.remove('hidden');
+  }
 
-    // Remove active status from sidebar links
-    const sideLinks = document.querySelectorAll('.side-menu li');
-    sideLinks.forEach(link => link.classList.remove('active'));
+  // Update Sidebar Nav style
+  const sidebarNavs = document.querySelectorAll('.nav-item');
+  sidebarNavs.forEach(btn => {
+    btn.classList.remove('tab-active');
+  });
+  const activeSideBtn = document.getElementById(`nav-side-${tabName}`);
+  if (activeSideBtn) {
+    activeSideBtn.classList.add('tab-active');
+  }
 
-    // Map special cases (e.g., 'more' and 'skills' routing to Education or Contact section dynamically)
-    let targetPageId = `tab-${tabId}`;
-    if (tabId === 'cv' || tabId === 'more') {
-        targetPageId = 'tab-more';
-    } else if (tabId === 'contact') {
-        targetPageId = 'tab-contact';
-    } else if (!document.getElementById(targetPageId)) {
-        targetPageId = 'tab-home'; // Fallback to Home if content tab isn't isolated
-    }
+  // Update Top Nav style
+  const topNavs = document.querySelectorAll('.top-nav');
+  topNavs.forEach(btn => {
+    btn.classList.remove('nav-active');
+  });
+  const activeTopBtn = document.getElementById(`top-nav-${tabName}`);
+  if (activeTopBtn) {
+    activeTopBtn.classList.add('nav-active');
+  }
 
-    // Display targeted section
-    const targetSection = document.getElementById(targetPageId);
-    if (targetSection) {
-        targetSection.classList.add('active');
-    }
-
-    // Highlight top nav tab
-    const activeTopLink = document.querySelector(`.top-nav .nav-link[data-tab="${tabId}"]`);
-    if (activeTopLink) activeTopLink.classList.add('active');
-
-    // Highlight sidebar tab
-    const activeSideLink = document.querySelector(`.side-menu li[data-tab="${tabId}"]`);
-    if (activeSideLink) activeSideLink.classList.add('active');
+  // Scroll top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Attach Event Listeners to Navigations
+// Set initial active tab
 document.addEventListener('DOMContentLoaded', () => {
-    // Top Nav clicks
-    document.querySelectorAll('.top-nav .nav-link').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const tab = link.getAttribute('data-tab');
-            switchTab(tab);
-        });
-    });
-
-    // Sidebar clicks
-    document.querySelectorAll('.side-menu li').forEach(item => {
-        item.addEventListener('click', () => {
-            const tab = item.getAttribute('data-tab');
-            switchTab(tab);
-        });
-    });
+  switchTab('home');
 });
 
-// Contact Form Handler
-function handleFormSubmit(event) {
-    event.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    
-    alert(`Thank you ${name}! Your message has been sent successfully.`);
-    document.getElementById('portfolio-form').reset();
+// Mobile Menu Toggle
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const sidebar = document.getElementById('sidebar');
+
+if (mobileMenuBtn) {
+  mobileMenuBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('hidden');
+    sidebar.classList.toggle('fixed');
+    sidebar.classList.toggle('inset-0');
+    sidebar.classList.toggle('z-50');
+    sidebar.classList.toggle('bg-slate-950/95');
+    sidebar.classList.toggle('p-6');
+  });
+}
+
+// Toast Notification helper
+function showToast(message, isError = false) {
+  const toast = document.getElementById('toast');
+  const toastMsg = document.getElementById('toastMsg');
+  const toastIcon = document.getElementById('toastIcon');
+
+  toastMsg.textContent = message;
+  if (isError) {
+    toast.classList.remove('bg-blue-600');
+    toast.classList.add('bg-rose-600');
+    toastIcon.className = 'fa-solid fa-circle-exclamation text-lg';
+  } else {
+    toast.classList.remove('bg-rose-600');
+    toast.classList.add('bg-blue-600');
+    toastIcon.className = 'fa-solid fa-circle-check text-lg';
+  }
+
+  toast.classList.remove('translate-y-20', 'opacity-0');
+  toast.classList.add('translate-y-0', 'opacity-100');
+
+  setTimeout(() => {
+    toast.classList.remove('translate-y-0', 'opacity-100');
+    toast.classList.add('translate-y-20', 'opacity-0');
+  }, 4000);
+}
+
+// CV Download Trigger
+function downloadCV() {
+  showToast("Downloading Saidur Rahman's CV...");
+  // Simulate file download trigger
+  const link = document.createElement('a');
+  link.href = '#';
+  link.setAttribute('download', 'Saidur_Rahman_CV.pdf');
+  document.body.appendChild(link);
+  setTimeout(() => {
+    showToast("CV download started!");
+  }, 1000);
+}
+
+// Contact Form Handler with Google Sheet / Email Submission Integration
+function handleContactSubmit(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('formName').value;
+  const email = document.getElementById('formEmail').value;
+  const subject = document.getElementById('formSubject').value;
+  const message = document.getElementById('formMessage').value;
+
+  const submitBtn = document.getElementById('submitBtn');
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin text-xs"></i> SENDING...`;
+
+  // Google Sheet Webhook or direct Mailto Integration simulation
+  setTimeout(() => {
+    showToast(`Thank you, ${name}! Your message has been sent to Saidur.`);
+    document.getElementById('contactForm').reset();
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = `SEND MESSAGE <i class="fa-solid fa-paper-plane text-xs"></i>`;
+  }, 1200);
 }

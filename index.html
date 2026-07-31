@@ -1,337 +1,867 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saidur Rahman | Personal Portfolio</title>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saidur Rahman - CSE Student & Developer Portfolio</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            },
+            dark: {
+              bg: '#080c14',
+              card: '#0f172a',
+              border: '#1e293b',
+              hover: '#1e293b',
+              sidebar: '#0b1120'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg-[#060913] text-slate-100 min-h-screen flex flex-col justify-between">
 
-    <!-- Top Navigation Bar -->
-    <header class="top-header">
-        <div class="brand">
-            <span class="avatar-sm">SR</span>
-            <span class="brand-name">Saidur Rahman</span>
-        </div>
-        <nav class="top-nav">
-            <a href="#home" class="nav-link active" data-tab="home">Home</a>
-            <a href="#projects" class="nav-link" data-tab="projects">Projects</a>
-            <a href="#skills" class="nav-link" data-tab="skills">Skills</a>
-            <a href="#hobbies" class="nav-link" data-tab="hobbies">Hobbies</a>
-            <a href="#more" class="nav-link" data-tab="more">More</a>
-        </nav>
-        <div class="user-badge">
-            <span class="avatar-sm">SR</span>
-            <span class="brand-name">Saidur Rahman</span>
-        </div>
-    </header>
-
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Sidebar Navigation -->
-        <aside class="sidebar">
-            <ul class="side-menu">
-                <li class="active" data-tab="home">
-                    <i class="fa-solid fa-house"></i>
-                    <span>Home</span>
-                </li>
-                <li data-tab="cv">
-                    <i class="fa-solid fa-file-lines"></i>
-                    <span>CV</span>
-                </li>
-                <li data-tab="projects">
-                    <i class="fa-solid fa-code"></i>
-                    <span>Projects</span>
-                </li>
-                <li data-tab="skills">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <span>Skills</span>
-                </li>
-                <li data-tab="hobbies">
-                    <i class="fa-solid fa-heart"></i>
-                    <span>Hobbies</span>
-                </li>
-                <li data-tab="more">
-                    <i class="fa-solid fa-ellipsis"></i>
-                    <span>More</span>
-                </li>
-            </ul>
-
-            <div class="sidebar-contact">
-                <h4>Contact</h4>
-                <a href="https://wa.me/8801610231457" target="_blank" class="contact-item">
-                    <i class="fa-brands fa-whatsapp whatsapp-icon"></i>
-                    <div>
-                        <small>WhatsApp</small>
-                        <p>01610231457</p>
-                    </div>
-                </a>
-                <a href="https://facebook.com/sidur" target="_blank" class="contact-item">
-                    <i class="fa-brands fa-facebook facebook-icon"></i>
-                    <div>
-                        <small>Facebook</small>
-                        <p>Saidur Rahman</p>
-                    </div>
-                </a>
-                <a href="https://instagram.com/sidur" target="_blank" class="contact-item">
-                    <i class="fa-brands fa-instagram instagram-icon"></i>
-                    <div>
-                        <small>Instagram</small>
-                        <p>Saidur Rahman</p>
-                    </div>
-                </a>
-            </div>
-        </aside>
-
-        <!-- Dynamic Main Content Views -->
-        <main class="main-content">
-
-            <!-- PAGE 1: HOME TAB -->
-            <section id="tab-home" class="tab-page active">
-                <!-- Hero Section -->
-                <div class="card hero-card">
-                    <div class="hero-text">
-                        <span class="greeting">Assalamu Alaikum!</span>
-                        <h1>Saidur <span>Rahman</span></h1>
-                        <p>Computer Science and Engineering student with a passion for coding, problem solving and building impactful digital solutions.</p>
-                        <a href="#" class="btn btn-primary"><i class="fa-solid fa-download"></i> View CV</a>
-                    </div>
-                    <div class="hero-img-container">
-                        <!-- Profile Image placeholder -->
-                        <img src="sid.jpeg" alt="Saidur Rahman" class="hero-img" id="profile-pic">
-                    </div>
-                </div>
-
-                <!-- Grid Section for Home -->
-                <div class="grid-2col">
-                    <div class="card">
-                        <div class="card-header">
-                            <i class="fa-solid fa-user card-icon blue"></i>
-                            <h3>About Me</h3>
-                        </div>
-                        <p class="mb-1">I am a dedicated CSE student at International Islamic University of Chattogram.</p>
-                        <p class="mb-2">I love exploring new technologies and turning ideas into real-world applications through code.</p>
-                        
-                        <div class="institution-box">
-                            <i class="fa-solid fa-building-columns"></i>
-                            <div>
-                                <a href="https://sidur.ling" target="_blank" class="institution-link">International Islamic University of Chattogram</a>
-                                <p>Department : <span class="blue-text">Computer Science and Engineering</span></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header space-between">
-                            <div class="card-title-group">
-                                <i class="fa-solid fa-folder-open card-icon blue"></i>
-                                <h3>Projects</h3>
-                            </div>
-                            <button class="btn-text" onclick="switchTab('projects')">View All &rarr;</button>
-                        </div>
-                        <div class="project-mini-cards">
-                            <div class="mini-card">
-                                <i class="fa-solid fa-cart-shopping mini-icon blue-bg"></i>
-                                <h4>E-Commerce Website</h4>
-                                <p>A responsive e-commerce web application using HTML, CSS, JavaScript.</p>
-                                <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
-                            </div>
-                            <div class="mini-card">
-                                <i class="fa-solid fa-clipboard-list mini-icon green-bg"></i>
-                                <h4>To-Do List App</h4>
-                                <p>A simple task management app built with JavaScript and localStorage.</p>
-                                <div class="tags"><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span></div>
-                            </div>
-                            <div class="mini-card">
-                                <i class="fa-solid fa-calculator mini-icon purple-bg"></i>
-                                <h4>CGPA Calculator</h4>
-                                <p>A CGPA calculator for students built using Java Swing.</p>
-                                <div class="tags"><span class="tag">Java</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid-3col mt-1">
-                    <div class="card">
-                        <div class="card-header">
-                            <i class="fa-solid fa-code card-icon blue"></i>
-                            <h3>Skills</h3>
-                        </div>
-                        <div class="skills-grid">
-                            <span class="skill-pill"><i class="fa-brands fa-java red"></i> Java</span>
-                            <span class="skill-pill"><i class="fa-solid fa-c blue"></i> C++</span>
-                            <span class="skill-pill"><i class="fa-brands fa-html5 orange"></i> HTML</span>
-                            <span class="skill-pill"><i class="fa-brands fa-js yellow"></i> JS</span>
-                            <span class="skill-pill"><i class="fa-brands fa-css3-alt blue"></i> CSS</span>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <i class="fa-solid fa-heart card-icon red"></i>
-                            <h3>Hobbies</h3>
-                        </div>
-                        <div class="hobbies-icons">
-                            <div class="hobby-item"><i class="fa-solid fa-laptop-code"></i><span>Coding</span></div>
-                            <div class="hobby-item"><i class="fa-solid fa-book-open"></i><span>Reading</span></div>
-                            <div class="hobby-item"><i class="fa-solid fa-football"></i><span>Football</span></div>
-                            <div class="hobby-item"><i class="fa-solid fa-plane"></i><span>Traveling</span></div>
-                            <div class="hobby-item"><i class="fa-solid fa-music"></i><span>Listening Music</span></div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <i class="fa-solid fa-user card-icon blue"></i>
-                            <h3>More About Me</h3>
-                        </div>
-                        <p class="small-text">I am always eager to learn new things, take challenges, and collaborate on exciting projects. My goal is to become a skilled software engineer and contribute to innovative solutions.</p>
-                        <button class="btn btn-primary btn-full mt-1" onclick="switchTab('more')">Know More About Me</button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- PAGE 2: EDUCATION TAB (MORE) -->
-            <section id="tab-more" class="tab-page">
-                <div class="page-header">
-                    <h2>Education</h2>
-                    <p>My academic journey and milestones.</p>
-                </div>
-
-                <div class="grid-2col">
-                    <!-- HSC Card -->
-                    <div class="card edu-card">
-                        <div class="edu-header">
-                            <i class="fa-solid fa-graduation-cap edu-icon"></i>
-                            <h3>HSC - Higher Secondary School Certificate</h3>
-                        </div>
-                        <div class="edu-body">
-                            <div class="edu-badge-icon">
-                                <i class="fa-solid fa-book-bookmark"></i>
-                            </div>
-                            <div class="edu-details">
-                                <p><strong>College:</strong> Chattogram College</p>
-                                <p><strong>GPA:</strong> <span class="blue-text highlight-gpa">GPA 5.00</span></p>
-                                <p><strong>Year:</strong> 2023</p>
-                                <p><strong>Group:</strong> Science</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SSC Card -->
-                    <div class="card edu-card">
-                        <div class="edu-header">
-                            <i class="fa-solid fa-book-open-reader edu-icon"></i>
-                            <h3>SSC - Secondary School Certificate</h3>
-                        </div>
-                        <div class="edu-body">
-                            <div class="edu-badge-icon">
-                                <i class="fa-solid fa-school"></i>
-                            </div>
-                            <div class="edu-details">
-                                <p><strong>School:</strong> Chattogram Government High School</p>
-                                <p><strong>GPA:</strong> <span class="blue-text highlight-gpa">GPA 5.00</span></p>
-                                <p><strong>Year:</strong> 2021</p>
-                                <p><strong>Group:</strong> Science</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Academic Achievements -->
-                <div class="card mt-1 achievements-card">
-                    <h3>Key Academic Achievements</h3>
-                    <ul>
-                        <li><strong>Position:</strong> Top 10 merit list in Upazila for HSC.</li>
-                        <li><strong>Scholarship:</strong> Talentpool Scholarship in SSC.</li>
-                        <li><strong>Awards:</strong> Multiple awards in District-level Science Fairs.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- PAGE 3: CONTACT TAB -->
-            <section id="tab-contact" class="tab-page">
-                <div class="page-header center">
-                    <h2>GET IN TOUCH</h2>
-                    <p>Feel free to reach out with any questions or project inquiries.</p>
-                </div>
-
-                <div class="grid-2col contact-layout">
-                    <!-- Contact Details -->
-                    <div class="card contact-info-card">
-                        <h3>Contact & Location</h3>
-                        <hr class="divider">
-                        
-                        <div class="contact-detail-item">
-                            <i class="fa-solid fa-envelope contact-icon"></i>
-                            <div>
-                                <strong>Email:</strong>
-                                <p><a href="mailto:c251084@ugrad.iiuc.ac.bd">c251084@ugrad.iiuc.ac.bd</a></p>
-                            </div>
-                        </div>
-
-                        <div class="contact-detail-item">
-                            <i class="fa-solid fa-phone contact-icon"></i>
-                            <div>
-                                <strong>Phone:</strong>
-                                <p>+880 1610-231457</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-detail-item">
-                            <i class="fa-solid fa-location-dot contact-icon"></i>
-                            <div>
-                                <strong>Address:</strong>
-                                <p>Chattogram</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Contact Form -->
-                    <div class="card contact-form-card">
-                        <h3>Send a Message</h3>
-                        <form id="portfolio-form" onsubmit="handleFormSubmit(event)">
-                            <div class="form-group">
-                                <label for="name">Your Name</label>
-                                <input type="text" id="name" placeholder="Your Name" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email">Your Email</label>
-                                <input type="email" id="email" placeholder="Your Email" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <input type="text" id="subject" placeholder="Subject" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="message">Your Message</label>
-                                <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary btn-full">
-                                SEND MESSAGE <i class="fa-solid fa-paper-plane"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-
-                <footer class="footer-copyright">
-                    <p>&copy; 2024 Saidur Rahman. All Rights Reserved.</p>
-                </footer>
-            </section>
-
-        </main>
+  <!-- Top Mobile Bar -->
+  <div class="lg:hidden flex items-center justify-between p-4 bg-[#0b1120] border-b border-slate-800 sticky top-0 z-50">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center font-bold text-white shadow-lg">
+        SR
+      </div>
+      <span class="font-bold text-lg text-white">Saidur Rahman</span>
     </div>
+    <button id="mobileMenuBtn" class="text-slate-300 hover:text-white p-2">
+      <i class="fa-solid fa-bars text-xl"></i>
+    </button>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- Main Container Layout -->
+  <div class="max-w-[1500px] w-full mx-auto p-3 sm:p-6 flex gap-6 flex-1">
+
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="hidden lg:flex flex-col w-64 shrink-0 gap-6 sticky top-6 h-[calc(100vh-3rem)]">
+      
+      <!-- Top Profile Logo Badge -->
+      <div class="f-card p-4 flex items-center gap-3">
+        <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-blue-700 to-indigo-500 flex items-center justify-center text-white font-bold text-lg shadow-md">
+          SR
+        </div>
+        <div>
+          <h2 class="font-bold text-white text-base leading-tight">Saidur Rahman</h2>
+          <p class="text-xs text-blue-400 font-medium">CSE Student @ IIUC</p>
+        </div>
+      </div>
+
+      <!-- Main Navigation Menu -->
+      <div class="f-card p-3 flex flex-col gap-1.5 flex-1">
+        <button onclick="switchTab('home')" id="nav-side-home" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/60 transition text-left text-sm font-medium">
+          <i class="fa-solid fa-house text-lg w-5 text-center"></i> Home
+        </button>
+        <button onclick="downloadCV()" id="nav-side-cv" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/60 transition text-left text-sm font-medium">
+          <i class="fa-solid fa-file-lines text-lg w-5 text-center"></i> CV
+        </button>
+        <button onclick="switchTab('projects')" id="nav-side-projects" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/60 transition text-left text-sm font-medium">
+          <i class="fa-solid fa-code text-lg w-5 text-center"></i> Projects
+        </button>
+        <button onclick="switchTab('skills')" id="nav-side-skills" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/60 transition text-left text-sm font-medium">
+          <i class="fa-solid fa-graduation-cap text-lg w-5 text-center"></i> Skills
+        </button>
+        <button onclick="switchTab('hobbies')" id="nav-side-hobbies" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/60 transition text-left text-sm font-medium">
+          <i class="fa-solid fa-heart text-lg w-5 text-center"></i> Hobbies
+        </button>
+        <button onclick="switchTab('more')" id="nav-side-more" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/60 transition text-left text-sm font-medium">
+          <i class="fa-solid fa-ellipsis text-lg w-5 text-center"></i> More
+        </button>
+      </div>
+
+      <!-- Contact Quick Links Sidebar Block -->
+      <div class="f-card p-4 flex flex-col gap-3">
+        <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Contact</h3>
+        
+        <a href="https://wa.me/8801610231457" target="_blank" class="flex items-center gap-3 text-slate-300 hover:text-emerald-400 transition text-sm">
+          <div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-500">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+          </div>
+          <div>
+            <div class="text-[10px] text-slate-400">WhatsApp</div>
+            <div class="text-xs font-medium">01610231457</div>
+          </div>
+        </a>
+
+        <a href="https://www.facebook.com/share/1ExMcbsRTv/" target="_blank" class="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition text-sm">
+          <div class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500">
+            <i class="fa-brands fa-facebook-f text-base"></i>
+          </div>
+          <div>
+            <div class="text-[10px] text-slate-400">Facebook</div>
+            <div class="text-xs font-medium">Saidur Rahman</div>
+          </div>
+        </a>
+
+        <a href="https://www.instagram.com/shadin_vibes?igsh=MTk0Z3Q3amZzcmkzdQ==" target="_blank" class="flex items-center gap-3 text-slate-300 hover:text-pink-400 transition text-sm">
+          <div class="w-8 h-8 rounded-lg bg-pink-500/10 flex items-center justify-center text-pink-500">
+            <i class="fa-brands fa-instagram text-lg"></i>
+          </div>
+          <div>
+            <div class="text-[10px] text-slate-400">Instagram</div>
+            <div class="text-xs font-medium">Saidur Rahman</div>
+          </div>
+        </a>
+
+        <a href="https://github.com/saidurrahman4206945-creator/portfolio" target="_blank" class="flex items-center gap-3 text-slate-300 hover:text-purple-400 transition text-sm">
+          <div class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400">
+            <i class="fa-brands fa-github text-lg"></i>
+          </div>
+          <div>
+            <div class="text-[10px] text-slate-400">GitHub Profile</div>
+            <div class="text-xs font-medium truncate max-w-[130px]">saidurrahman...</div>
+          </div>
+        </a>
+      </div>
+
+    </aside>
+
+    <!-- Main Right Content Area -->
+    <main class="flex-1 flex flex-col gap-6 min-w-0">
+
+      <!-- Top Desktop Header Navbar -->
+      <header class="f-card px-6 py-3 flex items-center justify-between">
+        <div class="hidden sm:flex items-center gap-2">
+          <div class="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center font-bold text-white text-sm shadow">
+            SR
+          </div>
+          <span class="font-bold text-slate-200 text-sm">Saidur Rahman</span>
+        </div>
+
+        <!-- Top Navigation Links -->
+        <nav class="flex items-center gap-1 sm:gap-6 text-sm font-medium mx-auto sm:mx-0">
+          <button onclick="switchTab('home')" id="top-nav-home" class="top-nav px-3 py-1.5 text-slate-400 hover:text-white transition">Home</button>
+          <button onclick="switchTab('projects')" id="top-nav-projects" class="top-nav px-3 py-1.5 text-slate-400 hover:text-white transition">Projects</button>
+          <button onclick="switchTab('skills')" id="top-nav-skills" class="top-nav px-3 py-1.5 text-slate-400 hover:text-white transition">Skills</button>
+          <button onclick="switchTab('hobbies')" id="top-nav-hobbies" class="top-nav px-3 py-1.5 text-slate-400 hover:text-white transition">Hobbies</button>
+          <button onclick="switchTab('more')" id="top-nav-more" class="top-nav px-3 py-1.5 text-slate-400 hover:text-white transition">More</button>
+          <button onclick="switchTab('contact')" id="top-nav-contact" class="top-nav px-3 py-1.5 text-slate-400 hover:text-white transition">Contact</button>
+        </nav>
+
+        <div class="hidden md:flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-blue-600/30 text-blue-400 border border-blue-500/40 flex items-center justify-center font-bold text-xs">
+            SR
+          </div>
+          <span class="text-xs font-semibold text-slate-300">Saidur Rahman</span>
+        </div>
+      </header>
+
+      <!-- SECTION 1: HOME PAGE -->
+      <section id="view-home" class="view-section flex flex-col gap-6">
+        
+        <!-- Top Hero Card -->
+        <div class="f-card p-6 md:p-8 flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden">
+          <div class="flex-1 space-y-4">
+            <span class="text-blue-400 font-medium text-sm tracking-wide">Assalamu Alaikum!</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
+              Saidur <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-400">Rahman</span>
+            </h1>
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed max-w-xl">
+              Computer Science and Engineering student with a passion for coding, problem solving and building impactful digital solutions.
+            </p>
+            <div class="pt-2">
+              <button onclick="downloadCV()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm rounded-xl shadow-lg hover:shadow-blue-600/30 transition flex items-center gap-2">
+                View CV <i ="Md_Sidratul_Montaha_CV"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Hero Image Holder -->
+          <div class="relative group w-full lg:w-72 h-64 sm:h-72 rounded-2xl overflow-hidden border-2 border-slate-700/60 shadow-2xl shrink-0">
+            <img src="sid.jpeg" 
+                 alt="Saidur Rahman" 
+                 onerror="this.src='https://placehold.co/600x600/1e293b/3b82f6?text=Saidur+Rahman'" 
+                 class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-4">
+              <div class="text-xs text-slate-300 font-medium bg-slate-900/80 px-3 py-1 rounded-full border border-slate-700 backdrop-blur">
+                📍 Chattogram, Bangladesh
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Middle Bento Row: About Me & Projects -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          
+          <!-- About Me Card -->
+          <div class="lg:col-span-5 f-card p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2.5 text-blue-400 font-bold text-base mb-4">
+                <i class="fa-solid fa-user-circle text-lg"></i>
+                <h2>About Me</h2>
+              </div>
+              <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                I am a dedicated CSE student at International Islamic University of Chittagong.
+              </p>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                I love exploring new technologies and turning ideas into real-world applications through code.
+              </p>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-building-columns"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-semibold text-blue-300">International Islamic University of Chittagong</h4>
+                <p class="text-xs text-slate-400">Department : <span class="text-blue-400 font-medium">Computer Science and Engineering</span></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projects Section Overview Card -->
+          <div class="lg:col-span-7 f-card p-6">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2.5 text-blue-400 font-bold text-base">
+                <i class="fa-solid fa-square-poll-vertical text-lg"></i>
+                <h2>Projects</h2>
+              </div>
+              <button onclick="switchTab('projects')" class="text-xs text-blue-400 hover:text-blue-300 font-medium flex items-center gap-1">
+                View All <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <!-- Project Item 1 -->
+              <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-3 flex flex-col justify-between hover:border-slate-700 transition">
+                <div>
+                  <div class="w-8 h-8 rounded-lg bg-blue-600/20 text-blue-400 flex items-center justify-center text-base mb-2">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </div>
+                  <h3 class="text-xs font-bold text-white mb-1">E-Commerce Website</h3>
+                  <p class="text-[11px] text-slate-400 leading-snug mb-3">A responsive e-commerce web application using HTML, CSS, JavaScript.</p>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <span class="text-[9px] bg-slate-800 text-slate-300 px-1.5 py-0.5 rounded">HTML</span>
+                  <span class="text-[9px] bg-slate-800 text-slate-300 px-1.5 py-0.5 rounded">CSS</span>
+                  <span class="text-[9px] bg-slate-800 text-slate-300 px-1.5 py-0.5 rounded">JavaScript</span>
+                </div>
+              </div>
+
+              <!-- Project Item 2 -->
+              <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-3 flex flex-col justify-between hover:border-slate-700 transition">
+                <div>
+                  <div class="w-8 h-8 rounded-lg bg-emerald-600/20 text-emerald-400 flex items-center justify-center text-base mb-2">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                  </div>
+                  <h3 class="text-xs font-bold text-white mb-1">To-Do List App</h3>
+                  <p class="text-[11px] text-slate-400 leading-snug mb-3">A simple task management app built with JavaScript and localStorage.</p>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <span class="text-[9px] bg-slate-800 text-slate-300 px-1.5 py-0.5 rounded">JavaScript</span>
+                  <span class="text-[9px] bg-slate-800 text-slate-300 px-1.5 py-0.5 rounded">HTML</span>
+                  <span class="text-[9px] bg-slate-800 text-slate-300 px-1.5 py-0.5 rounded">CSS</span>
+                </div>
+              </div>
+
+              <!-- Project Item 3 -->
+              <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-3 flex flex-col justify-between hover:border-slate-700 transition">
+                <div>
+                  <div class="w-8 h-8 rounded-lg bg-purple-600/20 text-purple-400 flex items-center justify-center text-base mb-2">
+                    <i class="fa-solid fa-calculator"></i>
+                  </div>
+                  <h3 class="text-xs font-bold text-white mb-1">CGPA Calculator</h3>
+                  <p class="text-[11px] text-slate-400 leading-snug mb-3">A CGPA calculator for students built using Java Swing.</p>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <span class="text-[9px] bg-slate-800 text-slate-300 px-1.5 py-0.5 rounded">Java</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Bento Row: Skills, Hobbies, More About Me -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Skills Box -->
+          <div class="f-card p-5">
+            <div class="flex items-center gap-2 text-blue-400 font-bold text-sm mb-4">
+              <i class="fa-solid fa-code"></i>
+              <h3>Skills</h3>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <div class="bg-slate-900/80 border border-slate-800 rounded-lg p-2 flex items-center gap-2">
+                <i class="fa-brands fa-java text-orange-400 text-base"></i>
+                <span class="text-xs font-semibold">Java</span>
+              </div>
+              <div class="bg-slate-900/80 border border-slate-800 rounded-lg p-2 flex items-center gap-2">
+                <i class="fa-solid fa-c text-blue-400 text-base"></i>
+                <span class="text-xs font-semibold">C++</span>
+              </div>
+              <div class="bg-slate-900/80 border border-slate-800 rounded-lg p-2 flex items-center gap-2">
+                <i class="fa-brands fa-html5 text-orange-500 text-base"></i>
+                <span class="text-xs font-semibold">HTML</span>
+              </div>
+              <div class="bg-slate-900/80 border border-slate-800 rounded-lg p-2 flex items-center gap-2">
+                <i class="fa-brands fa-js text-yellow-400 text-base"></i>
+                <span class="text-xs font-semibold">JS</span>
+              </div>
+              <div class="bg-slate-900/80 border border-slate-800 rounded-lg p-2 flex items-center gap-2 col-span-2">
+                <i class="fa-brands fa-css3-alt text-blue-500 text-base"></i>
+                <span class="text-xs font-semibold">CSS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hobbies Box -->
+          <div class="f-card p-5">
+            <div class="flex items-center gap-2 text-rose-400 font-bold text-sm mb-4">
+              <i class="fa-solid fa-heart"></i>
+              <h3>Hobbies</h3>
+            </div>
+            <div class="grid grid-cols-5 gap-2 text-center">
+              <div class="flex flex-col items-center">
+                <div class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-blue-400 mb-1">
+                  <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <span class="text-[10px] text-slate-300">Coding</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-400 mb-1">
+                  <i class="fa-solid fa-book-open"></i>
+                </div>
+                <span class="text-[10px] text-slate-300">Posting about Messi</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-emerald-400 mb-1">
+                  <i class="fa-solid fa-futbol"></i>
+                </div>
+                <span class="text-[10px] text-slate-300">Football</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-cyan-400 mb-1">
+                  <i class="fa-solid fa-plane"></i>
+                </div>
+                <span class="text-[10px] text-slate-300">Traveling</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-pink-400 mb-1">
+                  <i class="fa-solid fa-music"></i>
+                </div>
+                <span class="text-[10px] text-slate-300 leading-tight">Listening Music</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- More About Me Box -->
+          <div class="f-card p-5 flex flex-col justify-between relative overflow-hidden">
+            <div>
+              <div class="flex items-center gap-2 text-blue-400 font-bold text-sm mb-3">
+                <i class="fa-solid fa-user text-base"></i>
+                <h3>More About Me</h3>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                I am always eager to learn new things, take challenges, and collaborate on exciting projects. My goal is to become a skilled software engineer and contribute to innovative solutions that make a difference. also i wants to messi won another world cup
+              </p>
+            </div>
+            <div>
+              <button onclick="switchTab('more')" class="w-full py-2 bg-blue-600/90 hover:bg-blue-600 text-white font-medium text-xs rounded-lg transition">
+                Know More About Me
+              </button>
+            </div>
+            <!-- Subtle star decorative graphic -->
+            <div class="absolute -bottom-4 -right-4 opacity-10 text-slate-100 pointer-events-none text-7xl">
+              <i class="fa-solid fa-sparkles"></i>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- SECTION 2: EDUCATION & MORE PAGE -->
+      <section id="view-more" class="view-section hidden flex flex-col gap-6">
+        
+        <div class="f-card p-6 md:p-8">
+          <h1 class="text-2xl md:text-3xl font-extrabold text-white mb-1">Education</h1>
+          <p class="text-slate-400 text-sm mb-8">My academic journey and milestones.</p>
+
+          <!-- Education Cards Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+            
+            <!-- HSC Card -->
+            <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 flex items-start gap-5 hover:border-blue-500/40 transition">
+              <div class="w-16 h-16 rounded-2xl bg-blue-600/20 text-blue-400 flex items-center justify-center text-3xl shrink-0 border border-blue-500/30">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <div class="space-y-1.5 flex-1">
+                <h3 class="text-base font-bold text-white">HSC - Higher Secondary School Certificate</h3>
+                <div class="text-xs text-slate-300 font-medium">College: <span class="text-slate-200"> Mustafizur rahman university college</span></div>
+                <div class="text-xs text-slate-300 font-medium">GPA: <span class="text-blue-400 font-bold text-sm">GPA 5.00</span></div>
+                <div class="text-xs text-slate-300 font-medium">Year: <span class="text-slate-200">2024</span></div>
+                <div class="text-xs text-slate-400">Group: Science</div>
+              </div>
+            </div>
+
+            <!-- SSC Card -->
+            <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 flex items-start gap-5 hover:border-blue-500/40 transition">
+              <div class="w-16 h-16 rounded-2xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-3xl shrink-0 border border-indigo-500/30">
+                <i class="fa-solid fa-book"></i>
+              </div>
+              <div class="space-y-1.5 flex-1">
+                <h3 class="text-base font-bold text-white">SSC - Secondary School Certificate</h3>
+                <div class="text-xs text-slate-300 font-medium">School: <span class="text-slate-200">Bauria G.K Academy</span></div>
+                <div class="text-xs text-slate-300 font-medium">GPA: <span class="text-blue-400 font-bold text-sm">GPA 5.00</span></div>
+                <div class="text-xs text-slate-300 font-medium">Year: <span class="text-slate-200">2022</span></div>
+                <div class="text-xs text-slate-400">Group: Science</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Key Academic Achievements -->
+          <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 mb-8">
+            <h3 class="text-center text-sm font-bold text-white mb-3">Key Academic Achievements</h3>
+            <ul class="space-y-2 text-xs text-slate-300 max-w-xl mx-auto">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                <span><strong class="text-white">Position:</strong> Top 10 merit list in Upazila for HSC.</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                <span><strong class="text-white">Scholarship:</strong> Talentpool Scholarship in SSC.</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                <span><strong class="text-white">Awards:</strong> Multiple awards in District-level Science Fairs.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Certifications Carousel/Grid -->
+          <div>
+            <div class="flex items-center gap-2 text-blue-400 font-bold text-sm mb-4">
+              <i class="fa-solid fa-certificate"></i>
+              <h3>Certifications</h3>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+              <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 text-center flex flex-col items-center justify-between">
+                <div class="w-10 h-10 rounded-lg bg-orange-500/10 text-orange-500 flex items-center justify-center text-xl mb-2">
+                  <i class="fa-brands fa-html5"></i>
+                </div>
+                <span class="text-xs font-semibold text-slate-200 mb-2">HTML</span>
+                <button onclick="alert('Certification badge for HTML Essentials')" class="px-3 py-1 bg-blue-600/80 hover:bg-blue-600 text-white text-[10px] rounded-lg w-full">View</button>
+              </div>
+
+              <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 text-center flex flex-col items-center justify-between">
+                <div class="w-10 h-10 rounded-lg bg-yellow-500/10 text-yellow-400 flex items-center justify-center text-xl mb-2">
+                  <i class="fa-brands fa-python"></i>
+                </div>
+                <span class="text-xs font-semibold text-slate-200 mb-2">Python</span>
+                <button onclick="alert('Certification badge for Python Basics')" class="px-3 py-1 bg-blue-600/80 hover:bg-blue-600 text-white text-[10px] rounded-lg w-full">View</button>
+              </div>
+
+              <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 text-center flex flex-col items-center justify-between">
+                <div class="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl mb-2">
+                  <i class="fa-solid fa-network-wired"></i>
+                </div>
+                <span class="text-xs font-semibold text-slate-200 mb-2">Networking</span>
+                <button onclick="alert('Certification badge for Computer Networks Fundamentals')" class="px-3 py-1 bg-blue-600/80 hover:bg-blue-600 text-white text-[10px] rounded-lg w-full">View</button>
+              </div>
+
+              <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 text-center flex flex-col items-center justify-between">
+                <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl mb-2">
+                  <i class="fa-brands fa-microsoft"></i>
+                </div>
+                <span class="text-xs font-semibold text-slate-200 mb-2">Azure Cloud</span>
+                <button onclick="alert('Certification badge for Azure Fundamentals')" class="px-3 py-1 bg-blue-600/80 hover:bg-blue-600 text-white text-[10px] rounded-lg w-full">View</button>
+              </div>
+
+              <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 text-center flex flex-col items-center justify-between">
+                <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-2">
+                  <i class="fa-solid fa-terminal"></i>
+                </div>
+                <span class="text-xs font-semibold text-slate-200 mb-2">Scripting</span>
+                <button onclick="alert('Certification badge for Bash Scripting')" class="px-3 py-1 bg-blue-600/80 hover:bg-blue-600 text-white text-[10px] rounded-lg w-full">View</button>
+              </div>
+
+              <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 text-center flex flex-col items-center justify-between">
+                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-2">
+                  <i class="fa-solid fa-award"></i>
+                </div>
+                <span class="text-xs font-semibold text-slate-200 mb-2">HTML Cert</span>
+                <button onclick="alert('Certification badge for HTML Advanced')" class="px-3 py-1 bg-blue-600/80 hover:bg-blue-600 text-white text-[10px] rounded-lg w-full">View</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- SECTION 3: CONTACT PAGE -->
+      <section id="view-contact" class="view-section hidden flex flex-col items-center justify-center min-h-[500px]">
+        
+        <div class="w-full text-center mb-8">
+          <h1 class="text-3xl md:text-4xl font-extrabold text-white tracking-wide">GET IN TOUCH</h1>
+          <div class="w-16 h-1 bg-blue-600 mx-auto my-3 rounded-full"></div>
+          <p class="text-slate-400 text-sm">Feel free to reach out with any questions or project inquiries.</p>
+        </div>
+
+        <div class="f-card w-full p-6 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Contact & Location Info Side -->
+          <div class="lg:col-span-5 space-y-6">
+            <h2 class="text-xl font-bold text-white pb-2 border-b border-slate-800">Contact & Location</h2>
+
+            <!-- Email -->
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center text-2xl shrink-0">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400 font-medium">Email:</div>
+                <a href="mailto:c251084@ugrad.iiuc.ac.bd" class="text-sm font-semibold text-slate-200 hover:text-blue-400 transition">c251084@ugrad.iiuc.ac.bd</a>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center text-2xl shrink-0">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400 font-medium">Phone:</div>
+                <a href="tel:+8801610231457" class="text-sm font-semibold text-slate-200 hover:text-blue-400 transition">+880 1610-231457</a>
+              </div>
+            </div>
+
+            <!-- Address -->
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center text-2xl shrink-0">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400 font-medium">Address:</div>
+                <div class="text-sm font-semibold text-slate-200">Chattogram</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form Side -->
+          <div class="lg:col-span-7 bg-slate-900/90 border border-slate-800/90 p-6 rounded-2xl glow-blue">
+            <h2 class="text-lg font-bold text-white mb-4">Send a Message</h2>
+
+            <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+              <div>
+                <label class="block text-xs font-medium text-slate-300 mb-1">Your Name</label>
+                <input type="text" id="formName" required placeholder="Your Name" class="w-full bg-slate-950/70 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500 transition">
+              </div>
+
+              <div>
+                <label class="block text-xs font-medium text-slate-300 mb-1">Your Email</label>
+                <input type="email" id="formEmail" required placeholder="Your Email" class="w-full bg-slate-950/70 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500 transition">
+              </div>
+
+              <div>
+                <label class="block text-xs font-medium text-slate-300 mb-1">Subject</label>
+                <input type="text" id="formSubject" required placeholder="Subject" class="w-full bg-slate-950/70 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500 transition">
+              </div>
+
+              <div>
+                <label class="block text-xs font-medium text-slate-300 mb-1">Your Message</label>
+                <textarea id="formMessage" rows="4" required placeholder="Your Message" class="w-full bg-slate-950/70 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500 transition resize-none"></textarea>
+              </div>
+
+              <button type="submit" id="submitBtn" class="w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold text-xs tracking-wider rounded-lg shadow-lg uppercase transition flex items-center justify-center gap-2">
+                SEND MESSAGE <i class="fa-solid fa-paper-plane text-xs"></i>
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- SECTION 4: PROJECTS DETAILED VIEW -->
+      <section id="view-projects" class="view-section hidden flex flex-col gap-6">
+        <div class="f-card p-6 md:p-8">
+          <h1 class="text-2xl md:text-3xl font-extrabold text-white mb-1">Projects Showcase</h1>
+          <p class="text-slate-400 text-sm mb-6">Explore my recent developments, apps, and academic works.</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Full Project Card 1 -->
+            <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 hover:border-blue-500/50 transition flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="w-10 h-10 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-white text-base">E-Commerce Web Platform</h3>
+                    <p class="text-xs text-blue-400">Web Application</p>
+                  </div>
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                  A full-featured responsive e-commerce web application including cart functionality, dynamic product listing, user filtering, and clean UI design.
+                </p>
+              </div>
+              <div>
+                <div class="flex flex-wrap gap-1.5 mb-4">
+                  <span class="text-[10px] bg-slate-800 text-blue-300 px-2 py-0.5 rounded-full border border-slate-700">HTML5</span>
+                  <span class="text-[10px] bg-slate-800 text-blue-300 px-2 py-0.5 rounded-full border border-slate-700">CSS3</span>
+                  <span class="text-[10px] bg-slate-800 text-blue-300 px-2 py-0.5 rounded-full border border-slate-700">JavaScript ES6</span>
+                </div>
+                <a href="https://github.com/saidurrahman4206945-creator/portfolio" target="_blank" class="block text-center py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-lg transition">
+                  <i class="fa-brands fa-github mr-1"></i> View Code on GitHub
+                </a>
+              </div>
+            </div>
+
+            <!-- Full Project Card 2 -->
+            <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 hover:border-blue-500/50 transition flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="w-10 h-10 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-list-check"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-white text-base">To-Do List App</h3>
+                    <p class="text-xs text-emerald-400">Productivity Tool</p>
+                  </div>
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                  An intuitive task management web application built with vanilla JavaScript using localStorage for persistent daily task planning and completion tracking.
+                </p>
+              </div>
+              <div>
+                <div class="flex flex-wrap gap-1.5 mb-4">
+                  <span class="text-[10px] bg-slate-800 text-emerald-300 px-2 py-0.5 rounded-full border border-slate-700">JavaScript</span>
+                  <span class="text-[10px] bg-slate-800 text-emerald-300 px-2 py-0.5 rounded-full border border-slate-700">HTML</span>
+                  <span class="text-[10px] bg-slate-800 text-emerald-300 px-2 py-0.5 rounded-full border border-slate-700">CSS</span>
+                </div>
+                <a href="https://github.com/saidurrahman4206945-creator/portfolio" target="_blank" class="block text-center py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-lg transition">
+                  <i class="fa-brands fa-github mr-1"></i> View Code on GitHub
+                </a>
+              </div>
+            </div>
+
+            <!-- Full Project Card 3 -->
+            <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 hover:border-blue-500/50 transition flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="w-10 h-10 rounded-xl bg-purple-600/20 text-purple-400 flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-calculator"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-white text-base">CGPA Calculator</h3>
+                    <p class="text-xs text-purple-400">Desktop Software</p>
+                  </div>
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                  A GUI-based desktop application constructed using Java Swing for university students to accurately compute semestral and cumulative GPA scores.
+                </p>
+              </div>
+              <div>
+                <div class="flex flex-wrap gap-1.5 mb-4">
+                  <span class="text-[10px] bg-slate-800 text-purple-300 px-2 py-0.5 rounded-full border border-slate-700">Java</span>
+                  <span class="text-[10px] bg-slate-800 text-purple-300 px-2 py-0.5 rounded-full border border-slate-700">Swing</span>
+                  <span class="text-[10px] bg-slate-800 text-purple-300 px-2 py-0.5 rounded-full border border-slate-700">OOP</span>
+                </div>
+                <a href="https://github.com/saidurrahman4206945-creator/portfolio" target="_blank" class="block text-center py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-lg transition">
+                  <i class="fa-brands fa-github mr-1"></i> View Code on GitHub
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: SKILLS DETAILED VIEW -->
+      <section id="view-skills" class="view-section hidden flex flex-col gap-6">
+        <div class="f-card p-6 md:p-8">
+          <h1 class="text-2xl md:text-3xl font-extrabold text-white mb-1">Technical Skills</h1>
+          <p class="text-slate-400 text-sm mb-6">Programming languages, web technologies, and software tools.</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <div class="bg-slate-900/80 border border-slate-800 p-5 rounded-xl space-y-4">
+              <h3 class="text-sm font-bold text-blue-400 uppercase tracking-wider">Languages & Core</h3>
+              
+              <div>
+                <div class="flex justify-between text-xs font-medium mb-1">
+                  <span>C++</span>
+                  <span>5%</span>
+                </div>
+                <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-blue-500 rounded-full w-[85%]"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-medium mb-1">
+                  <span>Java</span>
+                  <span>80%</span>
+                </div>
+                <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-orange-500 rounded-full w-[80%]"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-medium mb-1">
+                  <span>JavaScript</span>
+                  <span>75%</span>
+                </div>
+                <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-yellow-400 rounded-full w-[75%]"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-slate-900/80 border border-slate-800 p-5 rounded-xl space-y-4">
+              <h3 class="text-sm font-bold text-blue-400 uppercase tracking-wider">Web Development</h3>
+              
+              <div>
+                <div class="flex justify-between text-xs font-medium mb-1">
+                  <span>HTML5 / Markup</span>
+                  <span>90%</span>
+                </div>
+                <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-orange-600 rounded-full w-[90%]"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-medium mb-1">
+                  <span>CSS3 / Tailwind CSS</span>
+                  <span>85%</span>
+                </div>
+                <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-blue-400 rounded-full w-[85%]"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-medium mb-1">
+                  <span>Git / GitHub</span>
+                  <span>80%</span>
+                </div>
+                <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-purple-500 rounded-full w-[80%]"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 6: HOBBIES DETAILED VIEW -->
+      <section id="view-hobbies" class="view-section hidden flex flex-col gap-6">
+        <div class="f-card p-6 md:p-8">
+          <h1 class="text-2xl md:text-3xl font-extrabold text-white mb-1">Hobbies & Interests</h1>
+          <p class="text-slate-400 text-sm mb-6">What I love doing outside of my academic studies.</p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            
+            <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-xl flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center text-2xl shrink-0">
+                <i class="fa-solid fa-laptop-code"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-sm">Competitive Coding</h3>
+                <p class="text-xs text-slate-400">Solving algorithms and logic challenges.</p>
+              </div>
+            </div>
+
+            <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-xl flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-amber-600/20 text-amber-400 flex items-center justify-center text-2xl shrink-0">
+                <i class="fa-solid fa-book-open"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-sm">Reading Tech Books</h3>
+                <p class="text-xs text-slate-400">Expanding knowledge on architecture & code.</p>
+              </div>
+            </div>
+
+            <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-xl flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center text-2xl shrink-0">
+                <i class="fa-solid fa-futbol"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-sm">Playing Football</h3>
+                <p class="text-xs text-slate-400">Staying active and enjoying team sports.</p>
+              </div>
+            </div>
+
+            <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-xl flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-cyan-600/20 text-cyan-400 flex items-center justify-center text-2xl shrink-0">
+                <i class="fa-solid fa-plane"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-sm">Traveling</h3>
+                <p class="text-xs text-slate-400">Exploring new places around Bangladesh.</p>
+              </div>
+            </div>
+
+            <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-xl flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-pink-600/20 text-pink-400 flex items-center justify-center text-2xl shrink-0">
+                <i class="fa-solid fa-music"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-sm">Listening Music</h3>
+                <p class="text-xs text-slate-400">Relaxing with instrumental & upbeat tracks.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="w-full border-t border-slate-900 bg-[#080c14] py-4 text-center text-xs text-slate-500 mt-6">
+    <p>© 2024-2026 Saidur Rahman. All Rights Reserved. | International Islamic University of Chittagong</p>
+  </footer>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="fixed bottom-5 right-5 bg-blue-600 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 transition-all duration-300 transform translate-y-20 opacity-0 z-50">
+    <i id="toastIcon" class="fa-solid fa-circle-check text-lg"></i>
+    <span id="toastMsg" class="text-xs font-semibold">Message sent successfully!</span>
+  </div>
+
+  <!-- External Script -->
+  <script src="script.js"></script>
 </body>
 </html>
